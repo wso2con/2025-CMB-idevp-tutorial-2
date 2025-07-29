@@ -1,0 +1,30 @@
+schemaVersion: 1.2
+name: customer-api
+componentType: service
+endpoints:
+  - name: customer-api
+    port: 8080
+    type: REST
+    service:
+      basePath: /api/v2
+      port: 8080
+    networkVisibilities:
+      - Organization
+    schemaFilePath: openapi.yaml
+configurations:
+  env:
+    - name: CHOREO_LOYALTY_TCP_PROXY_SERVICEURL
+      valueFrom:
+        configForm:
+          displayName: Loyalty Customer TCP Proxy Service URL
+          type: string
+    - name: CHOREO_LOYALTY_TCP_PROXY_USERNAME
+      valueFrom:
+        configForm:
+          displayName: Loyalty Customer TCP Proxy Username
+          type: string
+    - name: CHOREO_LOYALTY_TCP_PROXY_PASSWORD
+      valueFrom:
+        configForm:
+          displayName: Loyalty Customer TCP Proxy Password
+          type: secret
