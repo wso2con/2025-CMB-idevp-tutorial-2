@@ -1,0 +1,10 @@
+schemaVersion: 1.2
+endpoints:
+  - name: loyalty-api-endpoint
+    service:
+      basePath: /
+      port: 3001
+    type: REST
+    networkVisibilities:
+      - Public
+      - Organization
