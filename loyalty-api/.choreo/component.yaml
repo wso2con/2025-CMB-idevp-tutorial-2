@@ -8,3 +8,13 @@ endpoints:
     networkVisibilities:
       - Public
       - Organization
+dependencies:
+  connectionReferences:
+    - name: FacebookAPI
+      resourceRef: thirdparty:Facebook/v19
+    - name: loyaltyDb
+      resourceRef: database:loyalty-campaign-db/loyaltyDB
+    - name: ScoreAPI
+      resourceRef: service:/demo-campaign/social-post-scorer/v1/5c69c/PROJECT
+    - name: CustomerAPI
+      resourceRef: service:/demo-loyalty-core/customer-api/v1/c9bdd/ORGANIZATION

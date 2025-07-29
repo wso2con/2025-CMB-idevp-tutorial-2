@@ -78,8 +78,8 @@ export interface ScoreResponse {
 }
 
 // Env passed by choreo
-const serviceURL = process.env.CHOREO_SCOREAPI_SERVICEURL;
-const choreoApiKey = process.env.CHOREO_SCOREAPI_CHOREOAPIKEY;
+const serviceurl = process.env.CHOREO_SCOREAPI_SERVICEURL;
+const choreoapikey = process.env.CHOREO_SCOREAPI_CHOREOAPIKEY;
 
 // Shared API client
 let apiClient: any = null
@@ -88,11 +88,11 @@ let apiClient: any = null
 const getApiClient = () => {
     if (!apiClient) {
         apiClient = axios.create({
-            baseURL: serviceURL,
+            baseURL: serviceurl,
             timeout: 60000,
             headers: {
                 'Content-Type': 'application/json',
-                'Choreo-API-Key': choreoApiKey
+                'Choreo-API-Key': choreoapikey
             }
         })
     }
